@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação Progresso de Download</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <i class="fa-solid fa-down-long download"></i>
+        <h2 id="number"></h2>
+    </div>
+    <script>
+        let download = document.querySelector(".download");
+        let container = document.getElementById("container");
+        let number = document.getElementById("number");
+        download.addEventListener("click", function(event){
+            download.classList.add("start");
+            let degree = 0;
+            let interval = setInterval(function(){
+                degree += 1;
+                if(degree > 100){
+                    clearInterval(interval);
+                    number.innerHTML = '<i class="fa-solid fa-check"></i><br><small>100% Done</small>'
+                    container.classList.add("done")
+                    return;
+                }
+                container.style.background = `conic-gradient(#f5036c ${degree}%, #333 0%)`;
+                number.innerHTML = degree + '<span>%</span>'
+            }, 100);
+        });
+    </script>
+</body>
+</html>

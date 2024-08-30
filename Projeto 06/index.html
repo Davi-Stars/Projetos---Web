@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuga Espacial</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Fuga Espacial</h1>
+        <div class="game-area">
+            <img class="spaceship" src="images/spaceship.png" alt="Nave Espacial" />
+        </div>
+        <div class="score-container">
+            <div class="score">Pontuação: 0</div>
+        </div>
+        <div class="controls">
+            <button class="start-button">Iniciar Jornada</button>
+            <button class="mute-music">Música: Ligada</button>
+            <button class="mute-sound">Som: Ligado</button>
+        </div>
+        <div class="instructions">
+            <p>Use as setas do teclado para controlar a nave e desviar dos meteoros!</p>
+        </div>
+        <div class="game-over" style="display: none;">
+            <h2>Fim da Jornada!</h2>
+            <p>Sua pontuação final foi: <span id="final-score"></span></p>
+            <button class="restart-button">Recomeçar</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <audio id="background-music" src="sounds/background-music.mp3" loop></audio> 
+    <audio id="explosion-sound" src="sounds/explosion.mp3"></audio> 
+</body>
+</html>

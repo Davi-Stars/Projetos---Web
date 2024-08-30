@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Preços</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nossos Planos</h1>
+        <div class="price-toggler">
+            <span class="month active">Mensal</span>
+            <span class="year">Anual</span>
+        </div>
+
+        <div class="box-container">
+            <div class="box">
+                <h3>Básico</h3>
+                <div class="price month">R$ <span>10</span>,00</div>
+                <div class="price year">R$ <span>30</span>,00</div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> 1 usuário</li>
+                    <li><i class="fas fa-check"></i> 10GB de armazenamento</li>
+                    <li><i class="fas fa-check"></i> 1 domínio</li>
+                    <li><i class="fas fa-check"></i> Suporte da equipe</li>
+                    <li><i class="fas fa-check"></i> Manutenção</li>
+                </ul>
+                <button class="btn" onclick="alert('Plano Básico selecionado!')">Escolher Plano</button>
+            </div>
+
+            <div class="box featured">
+                <h3>Regular</h3>
+                <div class="price month">R$ <span>30</span>,00</div>
+                <div class="price year">R$ <span>50</span>,00</div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> 10 usuários</li>
+                    <li><i class="fas fa-check"></i> 50GB de armazenamento</li>
+                    <li><i class="fas fa-check"></i> 10 domínios</li>
+                    <li><i class="fas fa-check"></i> Suporte da equipe</li>
+                    <li><i class="fas fa-check"></i> Manutenção</li>
+                </ul>
+                <button class="btn" onclick="alert('Plano Regular selecionado!')">Escolher Plano</button>
+            </div>
+
+            <div class="box">
+                <h3>Empresarial</h3>
+                <div class="price month">R$ <span>90</span>,00</div>
+                <div class="price year">R$ <span>150</span>,00</div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> 100 usuários</li>
+                    <li><i class="fas fa-check"></i> 100GB de armazenamento</li>
+                    <li><i class="fas fa-check"></i> 100 domínios</li>
+                    <li><i class="fas fa-check"></i> Suporte da equipe</li>
+                    <li><i class="fas fa-check"></i> Manutenção</li>
+                </ul>
+                <button class="btn" onclick="alert('Plano Empresarial selecionado!')">Escolher Plano</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

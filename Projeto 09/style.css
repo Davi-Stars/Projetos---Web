@@ -1,0 +1,89 @@
+body {
+    color: #333;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    line-height: 1.6; 
+    background: linear-gradient(135deg, #8c52ff, #722ed1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex: 1;
+}
+
+.centered {
+    margin: 2rem;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+h1 {
+    color: #333;
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: #555;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin: 0.5em 0;
+    font-weight: 300;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.choices {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: block;
+    background-color: #8c52ff;
+    margin: 0.5rem auto;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #722ed1;
+}
+
+.btn:active {
+    background-color: #531dab;
+}
+
+footer {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #777;
+}

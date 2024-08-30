@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="quiz" class="centered">
+            <h1>Quiz Aleatório</h1>
+            <h2 id="question"></h2>
+            <h3 id="score"></h3>
+
+            <div class="choices">
+                <p id="choice0"></p>
+                <button id="guess0" class="btn">Selecionar Resposta</button>
+            </div>
+            <div class="choices">
+                <p id="choice1"></p>
+                <button id="guess1" class="btn">Selecionar Resposta</button>
+            </div>
+            <div class="choices">
+                <p id="choice2"></p>
+                <button id="guess2" class="btn">Selecionar Resposta</button>
+            </div>
+            <div class="choices">
+                <p id="choice3"></p>
+                <button id="guess3" class="btn">Selecionar Resposta</button>
+            </div>
+
+            <footer>
+                <p id="progress">Questão x de y</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function Quiz(questoes) {
+    this.pontuacao = 0;
+    this.questoes = questoes;
+    this.indiceQuestaoAtual = 0;
+}
+
+Quiz.prototype.chutar = function(resposta) {
+    if (this.getQuestaoAtual().isRespostaCorreta(resposta)) {
+        this.pontuacao++;
+    }
+    this.indiceQuestaoAtual++;
+};
+
+Quiz.prototype.getQuestaoAtual = function() {
+    return this.questoes[this.indiceQuestaoAtual];
+};
+
+Quiz.prototype.terminou = function() {
+    return this.indiceQuestaoAtual >= this.questoes.length;
+};
+
+function Questao(texto, opcoes, resposta) {
+    this.texto = texto;
+    this.opcoes = opcoes;
+    this.resposta = resposta;
+}
+
+Questao.prototype.isRespostaCorreta = function(opcao) {
+    return this.resposta === opcao;
+};
+
+var QuizUI = {
+    exibirProxima: function() {
+        if (quiz.terminou()) {
+            this.exibirPontuacao();
+        } else {
+            this.exibirQuestao();
+            this.exibirOpcoes();
+            this.exibirProgresso();
+        }
+    },
+
+    exibirQuestao: function() {
+        this.preencherIdComHTML("question", quiz.getQuestaoAtual().texto);
+    },
+
+    exibirOpcoes: function() {
+        var opcoes = quiz.getQuestaoAtual().opcoes;
+
+        for (var i = 0; i < opcoes.length; i++) {
+            this.preencherIdComHTML("choice" + i, opcoes[i]);
+            this.lidarComChute("guess" + i, opcoes[i]);
+        }
+    },
+
+    exibirPontuacao: function() {
+        var gameOverHTML = "<h1>Fim de Jogo</h1>";
+        gameOverHTML += "<h2> Sua pontuação é: " + quiz.pontuacao + " / 5 </h2>";
+        this.preencherIdComHTML("quiz", gameOverHTML);
+    },
+
+    preencherIdComHTML: function(id, texto) {
+        var elemento = document.getElementById(id);
+        elemento.innerHTML = texto;
+    },
+
+    lidarComChute: function(id, chute) {
+        var botao = document.getElementById(id);
+        botao.onclick = function() {
+            quiz.chutar(chute);
+            QuizUI.exibirProxima();
+        };
+    },
+
+    exibirProgresso: function() {
+        var numeroQuestaoAtual = quiz.indiceQuestaoAtual + 1;
+        this.preencherIdComHTML("progress", "Questão " + numeroQuestaoAtual + " de " + quiz.questoes.length);
+    }
+};
+
+var questoes = [
+    new Questao("Qual planeta tem o maior número de luas?", ["Marte", "Júpiter", "Terra", "Saturno"], "Saturno"),
+    new Questao("Qual país ganhou mais copas?", ["Brasil", "Argentina", "Austrália", "Egito"], "Brasil"),
+    new Questao("Quantos dentes um homem tem?", ["8", "32", "53", "19"], "32"),
+    new Questao("Quantos ossos existem no ouvido humano?", ["4", "9", "16", "3"], "3"),
+    new Questao("Quantos países existem na África?", ["55", "93", "68", "40"], "55")
+];
+
+var quiz = new Quiz(questoes);
+
+QuizUI.exibirProxima();
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/wallpaper.jpg');
+    background-size: cover;
+    overflow: hidden;
+    color: #fff;
+    animation: animatedBackground 60s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.container {
+    padding: 2rem;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    color: #00f;
+}
+
+.game-area {
+    width: 400px;
+    height: 300px;
+    border: 2px solid #00f;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2); 
+    transform: none;
+}
+
+.spaceship {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    animation: spaceshipGlow 2s infinite alternate, spaceshipMove 0.2s linear;
+}
+
+@keyframes spaceshipGlow {
+    from {
+        filter: drop-shadow(0 0 0 #fff);
+    }
+    to {
+        filter: drop-shadow(0 0 10px #00f);
+    }
+}
+
+@keyframes spaceshipMove {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.asteroid, .comet {
+    position: absolute;
+    animation: rotate 5s linear infinite;
+}
+
+.asteroid {
+    width: 20px;
+    height: 20px;
+}
+
+.comet {
+    width: 30px;
+    height: 40px;
+}
+
+.comet::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.start-button {
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #00c;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem; 
+}
+
+.mute-music, .mute-sound {
+    background-color: rgba(0, 0, 255, 0.7); 
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.mute-music:hover, .mute-sound:hover {
+    background-color: rgba(0, 0, 204, 0.7); 
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.score {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.instructions {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    display: none;
+    animation: gameOverFadeIn 1s ease;
+}
+
+@keyframes gameOverFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.restart-button {
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+@media (max-width: 500px) {
+    .game-area {
+        width: 90%; 
+        height: 200px; 
+    }
+
+    .spaceship, .asteroid, .comet {
+    }
+}
