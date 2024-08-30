@@ -1,0 +1,159 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.card {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; 
+}
+
+.card::before { 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 36%; 
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    border-radius: 24px 24px 0 0;
+    background-color: #4070f4; 
+    z-index: 1;  
+}
+
+.card-header {
+  text-align: center;
+}
+
+.profile-image-container { 
+  width: 150px;
+  height: 150px;
+  margin: 25px auto;
+  position: relative; 
+  z-index: 2; 
+}
+
+.card-header img {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  object-fit: cover; 
+  border-radius: 50%; 
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #007bff;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h1 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.card-body p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.metrics {
+    margin-bottom: 20px;
+    color: #666;
+    display: flex;
+    justify-content: space-around;
+}
+
+.metrics span {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.metrics i {
+    margin-right: 5px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoes button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.card-footer {
+    background-color: #fffcfc;
+    padding: 10px;
+    text-align: center; 
+    border-top: 1px solid #ccc; 
+}
+
+.social-icon {
+    display: inline-block;
+    background-color: #fff; 
+    color: #3b5998; 
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc; 
+}
+
+.social-icon:hover {
+    opacity: 0.8; 
+}
+
+.social-icon .fa-twitter {
+  color: #1da1f2; 
+}
+
+.social-icon .fa-instagram {
+  color: #e4405f; 
+}
+
+.social-icon .fa-youtube {
+  color: #ff0000; 
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 90%;
+    }
+
+    .botoes button {
+        padding: 8px 15px;
+        font-size: 14px; 
+    }
+
+    .card-header img {
+        width: 120px; 
+        height: 120px; 
+    }
+
+    .card::before { 
+        height: 120px; 
+    }
+}
