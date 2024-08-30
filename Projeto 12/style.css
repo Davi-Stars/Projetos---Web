@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #25f085;
+}
+.container{
+    position: absolute;
+    width: min(37.5em, 90%);
+    background-color: #1a1a1a;
+    padding: 3em;
+    border-radius: 0.5em;
+}
+.container h1{
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.container button{
+    display: block;
+    background-color: #25f085;
+    margin: 2em auto;
+    padding: 1em;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+#otpDisplay{
+    font-size: 1em;
+    background-color: #3a3a3a;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    letter-spacing: 1em;
+}

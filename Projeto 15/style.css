@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #00f3f3, #5374df);
+    padding: 30px;
+    overflow-y: auto;
+}
+.to-do-list{
+    max-width: 520px;
+    width: 100%;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 15px;
+}
+.to-do-list h2{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #000;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding-left: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+}
+input{
+    flex: 1;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+input::placeholder{
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    color: #fff;
+    background-color: #5374df;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+ul li{
+    position: relative;
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 10px;
+    left: 8px;
+}
+ul li.checked{
+    text-decoration: line-through;
+    color: #5374df;
+}
+ul li span{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 25px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+}
+ul li span:hover{
+    color: #5374df;
+}
